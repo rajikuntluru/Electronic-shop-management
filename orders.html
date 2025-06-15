@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders - Electronic Shop Management System</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- Assuming the styles are in a file called style.css -->
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .search-bar {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+        }
+        
+        .search-bar input[type="text"] {
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+        }
+        
+        .container {
+            display: flex;
+            flex: 1;
+        }
+        
+        aside {
+            width: 20%;
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        
+        aside ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        aside ul li {
+            margin-bottom: 10px;
+        }
+        
+        aside ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto;
+        }
+        
+        .slick-carousel {
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        .slick-carousel img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .product {
+            margin-bottom: 20px;
+        }
+        
+        .product img {
+            max-width: 100px;
+            height: auto;
+        }
+        
+        .product-info {
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 20px;
+        }
+        /* Orders Page CSS */
+        
+        .orders-container {
+            padding: 20px;
+        }
+        
+        .orders-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .orders-table th,
+        .orders-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        .orders-table th {
+            background-color: #333;
+            color: white;
+        }
+        
+        .orders-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .orders-table tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+
+
+    <header>
+        <h1>Electronic Shop Management</h1>
+        <nav>
+            <ul>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="orders.html">Orders</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search orders...">
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="orders-container">
+            <h2>Orders</h2>
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer Name</th>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1001</td>
+                        <td>John Doe</td>
+                        <td>HP 22150H</td>
+                        <td>1</td>
+                        <td>$100</td>
+                        <td>Shipped</td>
+                    </tr>
+                    <tr>
+                        <td>1002</td>
+                        <td>Jane Smith</td>
+                        <td>Samsung 21 Ultra</td>
+                        <td>2</td>
+                        <td>$240</td>
+                        <td>Processing</td>
+                    </tr>
+                    <!-- Repeat similar structure for each order -->
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Electronic Shop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('search-input').addEventListener('input', function() {
+            const searchValue = this.value.toLowerCase();
+            const rows = document.querySelectorAll('.orders-table tbody tr');
+
+            rows.forEach(row => {
+                const customerName = row.cells[1].innerText.toLowerCase();
+                const product = row.cells[2].innerText.toLowerCase();
+                if (customerName.includes(searchValue) || product.includes(searchValue)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

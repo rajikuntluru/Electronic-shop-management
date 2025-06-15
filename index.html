@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronic Shop Management System - Login or Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        
+        .container {
+            width: 300px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .container h1 {
+            margin-bottom: 20px;
+        }
+        
+        .container form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container input[type="text"],
+        .container input[type="password"],
+        .container button {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .container button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .container button:hover {
+            background-color: #0056b3;
+        }
+        
+        .container .signup-link {
+            margin-top: 10px;
+            display: block;
+        }
+        
+        .container .signup-link a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        
+        .container .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            // Retrieve stored user credentials from localStorage
+            const storedUser = JSON.parse(localStorage.getItem('user'));
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (storedUser && username === storedUser.username && password === storedUser.password) {
+                window.location.href = 'main.html';
+            } else {
+                alert('Invalid login credentials');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form onsubmit="handleLogin(event)">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <div class="signup-link">
+            <span>Don't have an account? <a href="signup.html">Signup</a></span>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronic Shop Management System</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .search-bar {
+            position: absolute;
+            right: 20px;
+            top: 45px;
+        }
+        
+        .search-bar input[type="text"] {
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+        }
+        
+        .container {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+        }
+        
+        aside {
+            width: 20%;
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        
+        aside ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        aside ul li {
+            margin-bottom: 10px;
+        }
+        
+        aside ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto;
+        }
+        
+        .slick-carousel {
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        .slick-carousel img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+        
+        .product {
+            flex: 0 1 calc(30% - 20px);
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        
+        .product-info {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Intel Electronic</h1>
+        <nav>
+            <ul>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="orders.html">Orders</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search products...">
+        </div>
+    </header>
+
+    <div class="carousel-container">
+        <div class="slick-carousel">
+            <div><img src="img9.jpeg" alt="Image 1"></div>
+            <div><img src="img2.jpeg" alt="Image 2"></div>
+            <div><img src="img3.jpeg" alt="Image 3"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <main id="main-content">
+            <h2>Products</h2>
+            <div id="product-list" class="product-grid">
+                <!-- Example product item -->
+                <div class="product">
+                    <img src="img1.jpeg" alt="Product 1">
+                    <div class="product-info">
+                        <h3>HP 22150H</h3>
+                        <p>This Is The new Gen Laptop with The Features of the FUTURE</p>
+                        <p>Price: $10000</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="img2.jpeg" alt="Product 2">
+                    <div class="product-info">
+                        <h3>Samsung 21 Ultra</h3>
+                        <p>8GB RAM 256 ROM</p>
+                        <p>Price: $120</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="img3.jpeg" alt="Product 3">
+                    <div class="product-info">
+                        <h3>Boat 220R</h3>
+                        <p>With Noise Cancellation Feature</p>
+                        <p>Price: $200</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="img4.jpeg" alt="Product 4">
+                    <div class="product-info">
+                        <h3>PS5</h3>
+                        <p>4k resolution supported</p>
+                        <p>Price: $4000</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="img5.jpeg" alt="Product 5">
+                    <div class="product-info">
+                        <h3>Sony a7R</h3>
+                        <p>Ultra Flash Support</p>
+                        <p>Price: $900</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="img6.jpeg" alt="Product 6">
+                    <div class="product-info">
+                        <h3>Zebronics Keyboard</h3>
+                        <p>Wired Backlit Support</p>
+                        <p>Price: $50</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="img7.jpeg" alt="Product 7">
+                    <div class="product-info">
+                        <h3>HP Mouse</h3>
+                        <p>Wired Mouse</p>
+                        <p>Price: $20</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="img8.jpeg" alt="Product 8">
+                    <div class="product-info">
+                        <h3>Vision Pro</h3>
+                        <p>16x9 Ratio 4k resolution supported</p>
+                        <p>Price: $1900</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="img9.jpeg" alt="Product 9">
+                    <div class="product-info">
+                        <h3>Noise 550H</h3>
+                        <p>Wireless Headphones</p>
+                        <p>Price: $620</p>
+                    </div>
+                </div>
+                <!-- Repeat similar structure for each product -->
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Electronic Shop. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.slick-carousel').slick({
+                autoplay: true,
+                autoplaySpeed: 3000,
+                arrows: true,
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerMode: true,
+                centerPadding: '60px',
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                }, {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                }]
+            });
+
+            document.getElementById('search-input').addEventListener('input', function() {
+                const searchValue = this.value.toLowerCase();
+                const products = document.querySelectorAll('.product');
+
+                products.forEach(product => {
+                    const productName = product.querySelector('h3').innerText.toLowerCase();
+                    if (productName.includes(searchValue)) {
+                        product.style.display = '';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

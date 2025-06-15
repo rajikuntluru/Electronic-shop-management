@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        
+        h2 {
+            margin-bottom: 20px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        button {
+            background: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin: 10px 0;
+        }
+        
+        button:hover {
+            background: #555;
+        }
+        
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: #007BFF;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 id="form-title">Login</h2>
+        <form id="login-form">
+            <input type="email" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <form id="signup-form" style="display:none;">
+            <input type="text" id="signup-username" placeholder="Username" required>
+            <input type="email" id="signup-email" placeholder="Email" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <p id="toggle-text">Don't have an account? <button class="toggle-btn" id="toggle-btn">Sign Up</button></p>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const formTitle = document.getElementById('form-title');
+        const toggleText = document.getElementById('toggle-text');
+        const toggleBtn = document.getElementById('toggle-btn');
+
+        toggleBtn.addEventListener('click', () => {
+            if (signupForm.style.display === 'none') {
+                signupForm.style.display = 'block';
+                loginForm.style.display = 'none';
+                formTitle.textContent = 'Sign Up';
+                toggleText.innerHTML = 'Already have an account? <button class="toggle-btn" id="toggle-btn">Login</button>';
+            } else {
+                signupForm.style.display = 'none';
+                loginForm.style.display = 'block';
+                formTitle.textContent = 'Login';
+                toggleText.innerHTML = 'Don\'t have an account? <button class="toggle-btn" id="toggle-btn">Sign Up</button>';
+            }
+            // Re-attach the event listener to the newly added toggle button
+            document.getElementById('toggle-btn').addEventListener('click', toggleBtnClick);
+        });
+
+        const toggleBtnClick = () => {
+            if (signupForm.style.display === 'none') {
+                signupForm.style.display = 'block';
+                loginForm.style.display = 'none';
+                formTitle.textContent = 'Sign Up';
+                toggleText.innerHTML = 'Already have an account? <button class="toggle-btn" id="toggle-btn">Login</button>';
+            } else {
+                signupForm.style.display = 'none';
+                loginForm.style.display = 'block';
+                formTitle.textContent = 'Login';
+                toggleText.innerHTML = 'Don\'t have an account? <button class="toggle-btn" id="toggle-btn">Sign Up</button>';
+            }
+            // Re-attach the event listener to the newly added toggle button
+            document.getElementById('toggle-btn').addEventListener('click', toggleBtnClick);
+        };
+
+        document.getElementById('toggle-btn').addEventListener('click', toggleBtnClick);
+
+        // Handling form submissions
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            console.log(`Logging in with Email: ${email}, Password: ${password}`);
+            // Add your login logic here
+        });
+
+        signupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('signup-username').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            console.log(`Signing up with Username: ${username}, Email: ${email}, Password: ${password}`);
+            // Add your signup logic here
+        });
+    </script>
+</body>
+
+</html>
